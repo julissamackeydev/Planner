@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
 import { NavigateComponent } from './navigate/navigate.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { GoalsComponent } from './goals/goals.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigateComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    GoalsComponent
   ],
   imports: [
     BrowserModule,
