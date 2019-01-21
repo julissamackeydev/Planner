@@ -20,5 +20,3 @@ mongoose.connection.on('error', (error)=>{
 app.listen(8000, ()=>{
   console.info('server listening on 8000');
 });
-
-
