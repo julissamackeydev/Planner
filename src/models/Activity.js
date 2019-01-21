@@ -1,15 +1,12 @@
-const mongoose = require('mongoose'),
-Schema = mongoose.Schema,
-ActivitySchema = new Schema({
+const mongoose = require('mongoose')
+ActivitySchema = mongoose.Schema({
     author: {type:String, required:true},
-    time: {type:Date, requried:true},
+    time: {type:String, requried:true},
     date: Date,
     day: String,
     description: {type:String, required:true},
     status: {type:String, required:true},
-    repeat: {
-        daily: {type:Boolean}
-    }
+    repeat: {type:String}
 })
 
 const Activity = module.exports = mongoose.model('Activity', ActivitySchema)
