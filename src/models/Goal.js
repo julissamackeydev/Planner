@@ -1,6 +1,5 @@
 const mongoose = require('mongoose'),
-Schema = mongoose.Schema,
-GoalSchema = new Schema({
+GoalSchema = mongoose.Schema({
     description: {type:String, required:true},
     skills_needed: [String],
     hours_dedicated:{type:Number, required:true},
