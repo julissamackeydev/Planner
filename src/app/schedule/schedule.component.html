@@ -1,17 +1,70 @@
 <table class="striped">
   <thead>
     <tr>
-      <th>TIME</th>
+      <th><button data-target="modal" class="btn-flat modal-trigger"><i class='material-icons'>add_circle_outline</i></button>
+        TIME</th>
       <th>ACTIVITY</th>
       <th>STATUS</th>
     </tr>    
   </thead>
 
   <tbody>
-    <tr *ngFor="let hour of hours">
-      <td>{{hour}}</td>
-      <td>activity</td>
-      <td>done</td>
+    <tr *ngFor="let activity of activities">
+      <td>{{activity.time}}</td>
+      <td>{{activity.description}}</td>
+      <td>{{activity.repeat}}</td>
     </tr>
   </tbody>
-</table>
+</table> 
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h4>ADD AN ACTIVITY</h4>
+    
+    <div class="input-field validate col s5 m5 l5">
+      <label for="description">DESCRIPTION</label>
+      <input id="description" type="text">
+    </div>
+    
+    <div class="input-field col s2 m2 l2">
+      <select>
+        <option value="" diabled selected>TIME</option>        
+        <option value="">7am</option>        
+        <option value="">7am</option>        
+        <option value="">7am</option>        
+        <option value="">7am</option>        
+        <option value="">7am</option>        
+        <option value="">7am</option>
+      </select>
+    </div>
+
+    <div class="input-field col s3 m4 l3">
+      <select multiple>
+        <option value="" diabled selected>REPEAT</option>        
+        <option value="">DAILY</option>        
+        <option value="">WEEKLY</option>        
+        <option value="">MONTHLY</option>        
+        <option value="">ANNUALLY</option>        
+        <option value="">EVERY MONDAY</option>        
+        <option value="">EVERY TUESDAY</option>        
+        <option value="">EVERY WEDNESDAY</option>        
+        <option value="">EVERY THURSDAY</option>        
+        <option value="">EVERY FRIDAY</option>        
+        <option value="">EVERY SATURDAY</option>        
+        <option value="">EVERY SUNDAY</option>
+        
+        <option value="">EVERY OTHER MONDAY</option>        
+        <option value="">EVERY OTHER TUESDAY</option>        
+        <option value="">EVERY OTHER WEDNESDAY</option>        
+        <option value="">EVERY OTHER THURSDAY</option>        
+        <option value="">EVERY OTHER FRIDAY</option>        
+        <option value="">EVERY OTHER SATURDAY</option>        
+        <option value="">EVERY OTHER SUNDAY</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <a class="modal-close btn-flat col s1 m1 l1">ADD</a>      
+      <a class="modal-close btn-flat col s1 m1 l1">CANCEL</a>
+    </div>
+  </div>
+</div>

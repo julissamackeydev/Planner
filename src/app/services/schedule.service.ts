@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Activity } from '../../models/Activity';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +10,8 @@ export class ScheduleService {
 
 
   getSchedule(){
-    return this.http.get('http://localhost:8000/api/schedule');
+    let response: Activity;
+    response = this.http.get('http://localhost:8000/api/schedule');
+    return response;
   }
 }

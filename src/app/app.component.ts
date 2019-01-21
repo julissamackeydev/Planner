@@ -1,24 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ScheduleService } from './schedule.service';
+import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'Planner';
   
-  constructor( private scheduleService:ScheduleService){}
+  constructor(){}
 
   // https://www.forbes.com/forbesapi/thought/uri.json?enrich=true&query=1&relatedlimit=
   
-  ngOnInit(){
-    this.getSchedule();
-  } 
-
-  getSchedule(){
-    this.scheduleService.getSchedule().subscribe((data)=>{
-      console.log(data)
-    })
-  }
 }
