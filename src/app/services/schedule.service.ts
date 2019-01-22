@@ -14,4 +14,8 @@ export class ScheduleService {
     response = this.http.get('http://localhost:8000/api/schedule');
     return response;
   }
+
+  saveActivity(activity:Activity){
+    console.log(activity)
+  }
 }

@@ -1,50 +1,51 @@
 <h4>ADD AN ACTIVITY</h4>
-<form #activtyForm="ngForm">
+<form #activtyForm="ngForm" (ngSubmit)="onSubmit()">
   <div class="form-group input-field validate col s5 m5 l5">
     <label for="description">DESCRIPTION</label>
-    <input [(ngModel)]="description" name="description" id="description" type="text" class="form-control" required>
-    TODO: remove this: {{description}}
+    <input name="description" id="description" type="text"  [formControl]="description" required>
 
   </div>
 
   <div class="form-group input-field col s2 m2 l2">
-    <select class="form-control" required id="time">
+    <select [formControl]="time" required id="time" name="time">
       <option value="" diabled selected>TIME</option>
-      <option value="">7am</option>
-      <option value="">7am</option>
-      <option value="">7am</option>
-      <option value="">7am</option>
-      <option value="">7am</option>
-      <option value="">7am</option>
+      <option value="7am">7am</option>
+      <option value="7am">7am</option>
+      <option value="7am">7am</option>
+      <option value="7am">7am</option>
+      <option value="7am">7am</option>
+      <option value="7am">7am</option>
     </select>
   </div>
 
   <div class="form-group input-field col s3 m4 l3">
-    <select multiple>
+    <select [formControl]="repeat" multiple name="repeat">
       <option value="" diabled selected>REPEAT</option>
-      <option value="">DAILY</option>
-      <option value="">WEEKLY</option>
-      <option value="">MONTHLY</option>
-      <option value="">ANNUALLY</option>
-      <option value="">EVERY MONDAY</option>
-      <option value="">EVERY TUESDAY</option>
-      <option value="">EVERY WEDNESDAY</option>
-      <option value="">EVERY THURSDAY</option>
-      <option value="">EVERY FRIDAY</option>
-      <option value="">EVERY SATURDAY</option>
-      <option value="">EVERY SUNDAY</option>
+      <option value="NEVER">NEVER</option>
+      <option value="DAILY">DAILY</option>
+      <option value="WEEKLY">WEEKLY</option>
+      <option value="MONTHLY">MONTHLY</option>
+      <option value="ANNUALLY">ANNUALLY</option>
+      <option value="EVERY MONDAY">EVERY MONDAY</option>
+      <option value="EVERY TUESDAY">EVERY TUESDAY</option>
+      <option value="EVERY WEDNESDAY">EVERY WEDNESDAY</option>
+      <option value="EVERY THURSDAY">EVERY THURSDAY</option>
+      <option value="EVERY FRIDAY">EVERY FRIDAY</option>
+      <option value="EVERY SATURDAY">EVERY SATURDAY</option>
+      <option value="EVERY SUNDAY">EVERY SUNDAY</option>
 
-      <option value="">EVERY OTHER MONDAY</option>
-      <option value="">EVERY OTHER TUESDAY</option>
-      <option value="">EVERY OTHER WEDNESDAY</option>
-      <option value="">EVERY OTHER THURSDAY</option>
-      <option value="">EVERY OTHER FRIDAY</option>
-      <option value="">EVERY OTHER SATURDAY</option>
-      <option value="">EVERY OTHER SUNDAY</option>
+      <option value="EVERY OTHER MONDAY">EVERY OTHER MONDAY</option>
+      <option value="EVERY OTHER TUESDAY">EVERY OTHER TUESDAY</option>
+      <option value="EVERY OTHER WEDNESDAY">EVERY OTHER WEDNESDAY</option>
+      <option value="EVERY OTHER THURSDAY">EVERY OTHER THURSDAY</option>
+      <option value="EVERY OTHER FRIDAY">EVERY OTHER FRIDAY</option>
+      <option value="EVERY OTHER SATURDAY">EVERY OTHER SATURDAY</option>
+      <option value="EVERY OTHER SUNDAY">EVERY OTHER SUNDAY</option>
     </select>
+
   </div>
   <div class="modal-footer">
-    <button type="submit" class="modal-close btn-flat col s1 m1 l1">ADD</button>
+    <button [disabled]="description.invalid || time.invalid" type="submit" class="modal-close btn-flat col s1 m1 l1">ADD</button>
     <button class="modal-close btn-flat col s1 m1 l1">CANCEL</button>
   </div>
 </form>
